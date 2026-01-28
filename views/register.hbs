@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/frontRegister.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+    <link rel="stylesheet" href="/css/theme.css">
+    <title>Register - Secret Valentines</title>
+</head>
+<body>
+    <div id="valentinesHeartContainer"></div>
+    <div class="info">
+        <h1>{{title}}</h1>
+        <form id="registerForm" action="/register" method="POST">
+            <label for="username">Full Name:</label>
+            <input type="text" placeholder="John Doe" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" placeholder="••••••••••••" id="password" name="password" required>
+            
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" placeholder="••••••••••••" id="confirmPassword" name="confirmPassword" required>
+            
+            <button type="submit">Register</button>
+            <a href="/" class="register-link">Already have an account? Sign In</a>
+        </form>
+        <p style="color: lightyellow; margin-top: 20px; font-size: 14px;">
+            After registering, an admin must authenticate your account before you can access the app.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1300;
+}
+
+.gifts-wrapper {
+    background: rgba(255, 192, 203, 0.1);
+    border: 2px solid pink;
+    border-radius: 10px;
+    padding: 30px;
+    color: white;
+    position: relative;
+    z-index: 1300;
+}
+
+.gifts-wrapper h1 {
+    text-align: center;
+    color: #ff1493;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.subtitle {
+    text-align: center;
+    color: #ffb6c1;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.price-guide {
+    background: rgba(255, 105, 180, 0.2);
+    border-left: 4px solid #ff1493;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.price-guide h3 {
+    color: #ff1493;
+    margin-top: 0;
+}
+
+.price-guide ul {
+    list-style: none;
+    padding: 0;
+}
+
+.price-guide li {
+    color: #ffb6c1;
+    padding: 5px 0;
+}
+
+.add-gift-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.add-gift-form input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px;
+    border: 2px solid pink;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1em;
+}
+
+.add-gift-form input::placeholder {
+    color: #ffb6c1;
+}
+
+.add-gift-form input:focus {
+    outline: none;
+    border-color: #ff1493;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+
+.add-gift-form button {
+    padding: 12px 30px;
+    background: #ff1493;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.add-gift-form button:hover {
+    background: #ff69b4;
+    transform: scale(1.05);
+}
+
+.gifts-list {
+    display: grid;
+    gap: 15px;
+}
+
+.gift-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff69b4;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.gift-item:hover {
+    background: rgba(255, 105, 180, 0.2);
+    border-color: #ff1493;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+}
+
+.gift-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.gift-number {
+    background: #ff1493;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+}
+
+.gift-description {
+    color: white;
+    font-size: 1.1em;
+    flex: 1;
+}
+
+.gift-price {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 1.2em;
+    min-width: 80px;
+    text-align: right;
+}
+
+.gift-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background: #4169e1;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #1e90ff;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background: #dc143c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #ff0000;
+    transform: scale(1.05);
+}
+
+.no-gifts {
+    text-align: center;
+    color: #ffb6c1;
+    padding: 40px;
+    font-size: 1.1em;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 3px solid #ff1493;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container h2 {
+    color: #ff1493;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #ffb6c1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ff1493;
+    transform: scale(1.1);
+}
+
+.nav-links a.admin-link {
+    color: #ffd700;
+}
+
+.nav-links a.admin-link:hover {
+    color: #ffed4e;
+}

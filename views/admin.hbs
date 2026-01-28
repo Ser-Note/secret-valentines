@@ -1,0 +1,122 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/bottom-nav.css">
+    <script src="/js/theme.js" defer></script>
+    <script src="/js/admin.js" defer></script>
+    <script src="/js/bottom-nav.js" defer></script>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="admin-wrapper">
+            <h1>{{title}}</h1>
+            <p class="admin-welcome">Welcome, Admin {{username}}! 👑</p>
+            
+            <div class="admin-actions">
+                <button onclick="assignValentines()" class="action-btn assign-btn">
+                    🎲 Assign Secret Valentines
+                </button>
+            </div>
+
+            <div class="users-section">
+                <h2>User Management</h2>
+                
+                <div class="users-grid">
+                    {{#each users}}
+                    <div class="user-card" data-user-id="{{this.id}}">
+                        <div class="user-header">
+                            <h3>{{this.user_name}}</h3>
+                            <div class="user-badges">
+                                {{#if this.isAdmin}}<span class="badge admin-badge">Admin</span>{{/if}}
+                                {{#if this.isAuthenticated}}
+                                    <span class="badge auth-badge">Authenticated</span>
+                                {{else}}
+                                    <span class="badge pending-badge">Pending</span>
+                                {{/if}}
+                            </div>
+                        </div>
+                        
+                        <div class="user-info">
+                            <p><strong>ID:</strong> {{this.id}}</p>
+                            <p><strong>Created:</strong> {{this.created_at}}</p>
+                        </div>
+
+                        <div class="user-actions">
+                            {{#unless this.isAuthenticated}}
+                                <button onclick="authenticateUser('{{this.id}}', true)" class="small-btn auth-btn">
+                                    ✅ Authenticate
+                                </button>
+                            {{/unless}}
+                            {{#if this.isAuthenticated}}
+                                <button onclick="authenticateUser('{{this.id}}', false)" class="small-btn unauth-btn">
+                                    ❌ Revoke
+                                </button>
+                            {{/if}}
+                            
+                            {{#unless this.isAdmin}}
+                                <button onclick="toggleAdmin('{{this.id}}', true)" class="small-btn promote-btn">
+                                    ⭐ Make Admin
+                                </button>
+                            {{/unless}}
+                            {{#if this.isAdmin}}
+                                <button onclick="toggleAdmin('{{this.id}}', false)" class="small-btn demote-btn">
+                                    ⬇️ Remove Admin
+                                </button>
+                            {{/if}}
+                            
+                            <button onclick="viewGifts('{{this.id}}')" class="small-btn view-btn">
+                                🎁 View Gifts
+                            </button>
+                            
+                            <button onclick="viewValentine('{{this.id}}')" class="small-btn valentine-btn">
+                                💘 View Valentine
+                            </button>
+                            
+                            <button onclick="deleteUser('{{this.id}}')" class="small-btn delete-btn">
+                                🗑️ Delete
+                            </button>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for viewing gifts -->
+    <div id="giftsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">User Gifts</h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="/gifts" class="nav-item" data-page="gifts">
+            <div class="nav-item-icon">🎁</div>
+            <span class="nav-item-label">Gifts</span>
+        </a>
+        <a href="/secret-valentines" class="nav-item" data-page="valentines">
+            <div class="nav-item-icon">💌</div>
+            <span class="nav-item-label">Valentines</span>
+        </a>
+        <a href="/profile" class="nav-item" data-page="profile">
+            <div class="nav-item-icon">👤</div>
+            <span class="nav-item-label">Profile</span>
+        </a>
+        <a href="/admin" class="nav-item active" data-page="admin">
+            <div class="nav-item-icon">👑</div>
+            <span class="nav-item-label">Admin</span>
+        </a>
+        <a href="/logout" class="nav-item" data-page="logout">
+            <div class="nav-item-icon">🚪</div>
+            <span class="nav-item-label">Logout</span>
+        </a>
+    </nav>
+</body>

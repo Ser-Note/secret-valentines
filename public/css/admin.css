@@ -1,0 +1,392 @@
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1300;
+}
+
+.admin-wrapper {
+    background: rgba(255, 192, 203, 0.05);
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    padding: 30px;
+    color: white;
+    position: relative;
+    z-index: 1300;
+}
+
+.admin-wrapper h1 {
+    text-align: center;
+    color: #ffd700;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.admin-welcome {
+    text-align: center;
+    color: #ffed4e;
+    margin-bottom: 30px;
+    font-size: 1.3em;
+}
+
+.admin-actions {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+}
+
+.action-btn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.assign-btn {
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    color: white;
+}
+
+.assign-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+}
+
+.users-section {
+    margin-top: 30px;
+}
+
+.users-section h2 {
+    color: #ffd700;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.user-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.user-card:hover {
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ff69b4;
+}
+
+.user-header h3 {
+    color: #ff1493;
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.user-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.admin-badge {
+    background: #ffd700;
+    color: black;
+}
+
+.auth-badge {
+    background: #00ff00;
+    color: black;
+}
+
+.pending-badge {
+    background: #ff6b6b;
+    color: white;
+}
+
+.user-info {
+    color: #ffb6c1;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+.user-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.small-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    flex: 1 1 calc(50% - 4px);
+    min-width: 120px;
+}
+
+.small-btn:hover {
+    transform: translateY(-2px);
+}
+
+.auth-btn {
+    background: #00cc00;
+    color: white;
+}
+
+.auth-btn:hover {
+    background: #00ff00;
+}
+
+.unauth-btn {
+    background: #cc6600;
+    color: white;
+}
+
+.unauth-btn:hover {
+    background: #ff8800;
+}
+
+.promote-btn {
+    background: #ffd700;
+    color: black;
+}
+
+.promote-btn:hover {
+    background: #ffed4e;
+}
+
+.demote-btn {
+    background: #999;
+    color: white;
+}
+
+.demote-btn:hover {
+    background: #666;
+}
+
+.view-btn {
+    background: #4169e1;
+    color: white;
+}
+
+.view-btn:hover {
+    background: #1e90ff;
+}
+
+.valentine-btn {
+    background: #ff1493;
+    color: white;
+}
+
+.valentine-btn:hover {
+    background: #ff69b4;
+}
+
+.delete-btn {
+    background: #dc143c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #ff0000;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1300;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(255, 20, 147, 0.2));
+    margin: 5% auto;
+    padding: 30px;
+    border: 3px solid #ff1493;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    color: white;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+}
+
+.close {
+    color: #ff1493;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #ff69b4;
+    transform: scale(1.2);
+}
+
+#modalTitle {
+    color: #ff1493;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-gift-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 105, 180, 0.1);
+    border: 2px solid #ff69b4;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.modal-gift-number {
+    background: #ff1493;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.modal-gift-desc {
+    flex: 1;
+    padding: 0 15px;
+    color: white;
+}
+
+.modal-gift-price {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.valentine-reveal {
+    text-align: center;
+    padding: 30px;
+}
+
+.valentine-info {
+    color: #ffb6c1;
+    font-size: 1.1em;
+}
+
+.valentine-name {
+    color: #ff1493;
+    font-size: 2.5em;
+    margin: 20px 0;
+    text-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+
+.valentine-id {
+    color: #999;
+    font-size: 0.9em;
+}
+
+.no-data {
+    text-align: center;
+    color: #ffb6c1;
+    padding: 40px;
+    font-size: 1.1em;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 3px solid #ff1493;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container h2 {
+    color: #ff1493;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #ffb6c1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ff1493;
+    transform: scale(1.1);
+}
+
+.nav-links a.admin-link {
+    color: #ffd700;
+}
+
+.nav-links a.admin-link:hover {
+    color: #ffed4e;
+}
+
+@media (max-width: 768px) {
+    .users-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .small-btn {
+        flex: 1 1 100%;
+    }
+}

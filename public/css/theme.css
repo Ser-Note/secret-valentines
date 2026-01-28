@@ -1,0 +1,58 @@
+/* Snow container should remain visible when added */
+#winterSnowContainer {
+    display: block;
+}
+
+/* --- Winter Theme Overrides (dark background, card tint) --- */
+.Winter body, .Winter {
+  color: black;
+}
+
+.Winter .info {
+  background: #ffffff !important;
+  box-shadow: 0 20px 60px rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Winter .info h1, .Winter .info p, .Winter .info li, .Winter .info a, .Winter .info h2 {
+  color: #111827 !important;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10vh;
+  left: 0;
+  color: #e2f1ff;
+  font-size: 14px;
+  opacity: 0.95;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 16px rgba(52, 152, 219, 0.25);
+  transform-origin: center;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+/* gentle fall with rotation */
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

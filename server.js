@@ -12,6 +12,10 @@ const session = require('express-session');
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/backLogin.js');
 const registerRouter = require('./routes/backRegister.js');
+const giftsRouter = require('./routes/backGifts.js');
+const secretValentinesRouter = require('./routes/backSecretValentines.js');
+const profileRouter = require('./routes/backProfile.js');
+const adminRouter = require('./routes/backAdmin.js');
 
 // ---- Initialize express ---- //
 
@@ -49,6 +53,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
+app.use('/gifts', giftsRouter);
+app.use('/secret-valentines', secretValentinesRouter);
+app.use('/profile', profileRouter);
+app.use('/admin', adminRouter);
+
+// Logout route
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send('Error logging out');
+        }
+        res.redirect('/');
+    });
+});
 
 // ---- Start Server ---- //
 
