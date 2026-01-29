@@ -7,6 +7,7 @@ const path = require('path');
 const axios = require('axios');
 const session = require('express-session');
 const supabase = require('./config/supabase');
+const supabaseService = require('./config/supabaseService');
 const SupabaseSessionStore = require('./config/supabaseSessionStore');
 
 // ---- Initialize Routes ---- //
@@ -28,7 +29,7 @@ app.set('trust proxy', 1);
 
 app.use(session({
     store: new SupabaseSessionStore({
-        supabase,
+        supabase: supabaseService,
         tableName: 'sessions',
         ttl: 24 * 60 * 60 * 1000
     }),
