@@ -11,9 +11,7 @@ allElements.forEach(el => {
 // #region Flower Theme Features
 // Add flower petals falling effect
 function setValentinesTheme() {
-    createFallingEffect('❤️', 30, 80, 80);
-    createFallingEffect('🌹', 24, 40, 60);
-    createFallingEffect('💌', 20, 30, 40);
+    createFallingEffect('❤️', 30, 30, 80);
 }
 // #endregion
 
@@ -22,7 +20,7 @@ function setValentinesTheme() {
 
 // #region Winter Theme Features
 // Snowflake animation function
-function createFallingEffect(content, size = 18, amount = 60, speedMult = 10) {
+function createFallingEffect(content, size, amount, speedMult) {
     // #region container init
     let snowContainer = document.getElementById('winterSnowContainer');
     if (!snowContainer) {

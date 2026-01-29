@@ -156,6 +156,47 @@
     gap: 10px;
 }
 
+@media (max-width: 600px) {
+    .gift-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .gift-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .gift-number {
+        min-width: unset;
+    }
+
+    .gift-description {
+        width: 100%;
+        word-break: break-word;
+    }
+
+    .gift-price {
+        text-align: left;
+        min-width: unset;
+    }
+
+    .gift-actions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        flex: 1 1 120px;
+        text-align: center;
+    }
+}
+
 .edit-btn,
 .delete-btn {
     padding: 8px 15px;
