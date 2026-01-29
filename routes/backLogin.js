@@ -7,6 +7,10 @@ const { userDB } = require('../database/db');
 
 router.post('/', async (req, res) => {
     try {
+        if (req.session && req.session.userId) {
+            return res.json({ success: true, message: 'Already logged in' });
+        }
+
         const { username, password } = req.body;
         console.log('Login attempt:', { username, password: '***' });
 

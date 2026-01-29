@@ -6,6 +6,8 @@ const express= require('express');
 const path = require('path');
 const axios = require('axios');
 const session = require('express-session');
+const supabase = require('./config/supabase');
+const SupabaseSessionStore = require('./config/supabaseSessionStore');
 
 // ---- Initialize Routes ---- //
 
@@ -25,11 +27,16 @@ const app = express();
 app.set('trust proxy', 1);
 
 app.use(session({
+    store: new SupabaseSessionStore({
+        supabase,
+        tableName: 'sessions',
+        ttl: 24 * 60 * 60 * 1000
+    }),
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: { 
-        secure: false, // Set to true when you switch to vercel.com with HTTPS
+        secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax'
          } 
 }));
@@ -60,11 +67,16 @@ app.use('/admin', adminRouter);
 
 // Logout route
 app.get('/logout', (req, res) => {
+    if (!req.session) {
+        return res.redirect('/');
+    }
+
     req.session.destroy((err) => {
         if (err) {
             return res.status(500).send('Error logging out');
         }
-        res.redirect('/');
+        res.clearCookie('connect.sid');
+        return res.redirect('/');
     });
 });
 

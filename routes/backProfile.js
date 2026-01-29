@@ -92,11 +92,16 @@ router.put('/update-password', checkAuth, async (req, res) => {
 
 // ---- Logout ---- //
 router.get('/logout', (req, res) => {
+    if (!req.session) {
+        return res.redirect('/');
+    }
+
     req.session.destroy((err) => {
         if (err) {
             return res.status(500).send('Error logging out');
         }
-        res.redirect('/');
+        res.clearCookie('connect.sid');
+        return res.redirect('/');
     });
 });
 
